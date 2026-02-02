@@ -79,33 +79,44 @@ talentscout-chatbot/
 
 
 ---
-## Installation & Setup
-
-### 1. Clone the Repository
-```bash
+Installation & Setup
+1. Clone the Repository
 git clone https://github.com/<your-username>/talentscout-chatbot.git
 cd talentscout-chatbot
+
 2. Create & Activate Virtual Environment
 python -m venv venv
+
+
 Windows (PowerShell):
 
 .\venv\Scripts\Activate.ps1
+
 3. Install Dependencies
 pip install -r requirements.txt
+
 4. Configure OpenAI API Key
+
 Create the file:
 
 .streamlit/secrets.toml
+
+
 Add:
 
 OPENAI_API_KEY = "your_openai_api_key_here"
+
 5. Run the Application
 python -m streamlit run app.py
+
+
 The app will open at:
 
 http://localhost:8501
+
 Prompt Engineering Approach
 System Prompt
+
 The system prompt defines the chatbot’s role, tone, and boundaries:
 
 Acts strictly as a hiring assistant
@@ -115,6 +126,7 @@ Maintains a professional and neutral tone
 Restricted to recruitment and screening tasks only
 
 Dynamic Prompt
+
 The dynamic prompt:
 
 Injects the candidate’s declared tech stack
@@ -127,6 +139,7 @@ This approach keeps LLM output controlled and relevant.
 
 Design Decisions
 Hybrid Architecture
+
 Rule-based flow for collecting candidate information
 
 LLM usage only for technical question generation
@@ -142,6 +155,7 @@ Data privacy
 Efficient use of AI resources
 
 Challenges Faced & Solutions
+
 Challenge: Maintaining conversation context
 Solution: Used Streamlit session state to track steps and messages.
 
@@ -152,6 +166,7 @@ Challenge: Preventing unnecessary LLM calls
 Solution: Limited AI usage to only question generation.
 
 Future Improvements
+
 Sentiment analysis to assess candidate confidence
 
 Multilingual support
@@ -163,6 +178,7 @@ Cloud deployment (AWS / Streamlit Cloud)
 Recruiter dashboard for reviewing candidate responses
 
 Demo
+
 A short demo video (Loom) demonstrates:
 
 Chatbot greeting
@@ -176,9 +192,11 @@ Technical question generation
 Graceful exit
 
 Conclusion
+
 TalentScout demonstrates a practical and responsible use of Large Language Models in recruitment.
 By combining structured logic with AI-driven question generation, the chatbot provides a scalable, efficient, and recruiter-friendly screening solution.
 
 Author
+
 Zaid Khan
 AI/ML Intern Applicant
