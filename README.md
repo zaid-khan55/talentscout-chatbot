@@ -1,424 +1,183 @@
-\# 🤖 TalentScout – AI Hiring Assistant Chatbot
+# TalentScout – AI Hiring Assistant Chatbot
 
+## Overview
+TalentScout is an AI-powered hiring assistant chatbot built to automate the **initial screening of technical candidates**.  
+It interacts with candidates, collects essential information, and generates **custom technical interview questions** based on the candidate’s declared tech stack using a Large Language Model (LLM).
 
-
-\## 📌 Project Overview
-
-TalentScout is an AI-powered Hiring Assistant chatbot designed to automate the \*\*initial screening of technical candidates\*\*.  
-
-The chatbot interacts with candidates, gathers essential information, and dynamically generates \*\*tailored technical interview questions\*\* based on the candidate’s declared tech stack using a Large Language Model (LLM).
-
-
-
-This project demonstrates practical use of \*\*prompt engineering, context handling, and UI design\*\* in a real-world recruitment scenario.
-
-
+The project focuses on **prompt engineering, context management, and practical LLM usage** in a real-world recruitment scenario.
 
 ---
 
-
-
-\## 🎯 Objectives
-
-\- Automate first-round candidate screening
-
-\- Reduce recruiter workload
-
-\- Ensure consistent and scalable technical assessments
-
-\- Demonstrate effective and controlled use of LLMs
-
-
+## Problem Statement
+Recruiters often spend significant time collecting candidate details and preparing initial technical screening questions.  
+TalentScout reduces this effort by automating the first interaction while maintaining relevance, consistency, and professionalism.
 
 ---
 
+## Solution
+TalentScout guides candidates through a structured conversation, gathers key details, and dynamically generates technical interview questions tailored to the candidate’s skills.
 
-
-\## ✨ Features
-
-
-
-\### ✅ Candidate Interaction
-
-\- Professional greeting and onboarding
-
-\- Step-by-step guided conversation
-
-\- Context-aware interaction flow
-
-
-
-\### ✅ Information Collection
-
-The chatbot collects the following details:
-
-\- Full Name  
-
-\- Email Address  
-
-\- Phone Number  
-
-\- Years of Experience  
-
-\- Desired Position(s)  
-
-\- Current Location  
-
-\- Tech Stack (languages, frameworks, tools)
-
-
-
-\### ✅ Tech-Stack-Based Question Generation
-
-\- Generates \*\*3–5 technical interview questions\*\*
-
-\- Questions are dynamically generated based on the declared tech stack
-
-\- Mix of conceptual and real-world scenario questions
-
-\- No answers or hints are provided
-
-
-
-\### ✅ Conversation Management
-
-\- Maintains context using Streamlit session state
-
-\- Prevents repeated or irrelevant questions
-
-\- Graceful exit handling using keywords like `exit`, `bye`, or `quit`
-
-
-
-\### ✅ Data Privacy \& Security
-
-\- No permanent data storage
-
-\- Candidate data exists only during the active session
-
-\- GDPR-compliant simulated data handling
-
-
+The chatbot uses:
+- Rule-based logic for predictable data collection
+- LLMs only where intelligent reasoning is required
 
 ---
 
+## Key Features
 
+### 1. Candidate Information Collection
+The chatbot collects:
+- Full Name  
+- Email Address  
+- Phone Number  
+- Years of Experience  
+- Desired Role(s)  
+- Current Location  
+- Tech Stack (languages, frameworks, tools)
 
-\## 🛠️ Tech Stack
+### 2. Tech-Stack-Based Question Generation
+- Generates **3–5 technical interview questions**
+- Questions are tailored to the candidate’s declared tech stack
+- Mix of conceptual and real-world scenario questions
+- No answers or hints are provided
 
+### 3. Context-Aware Conversation
+- Maintains conversation flow using session state
+- Avoids repeating questions
+- Ensures a smooth chatbot-like experience
 
+### 4. Exit Handling
+- Supports graceful exit using keywords such as `exit`, `quit`, or `bye`
+- Ends the conversation professionally
 
-| Component | Technology |
-
-|--------|-----------|
-
-| Programming Language | Python |
-
-| Frontend | Streamlit |
-
-| Large Language Model | OpenAI GPT |
-
-| State Management | Streamlit Session State |
-
-| Environment | Virtual Environment (venv) |
-
-
+### 5. Data Privacy
+- No permanent data storage
+- Candidate information exists only during the active session
+- GDPR-friendly, simulated data handling
 
 ---
 
+## Tech Stack
+- **Python**
+- **Streamlit** – UI and interaction
+- **OpenAI GPT** – Technical question generation
+- **Streamlit Session State** – Context handling
+- **Virtual Environment (venv)** – Dependency isolation
 
+---
 
-\## 🧱 Project Structure
+## Project Structure
 
-
-
-Talentscout-chatbot/
-
-├── app.py
-
-├── prompts.py
-
-├── utils.py
-
-├── requirements.txt
-
-├── README.md
-
+talentscout-chatbot/
+├── app.py # Main Streamlit application
+├── prompts.py # System and question-generation prompts
+├── utils.py # Helper utilities
+├── requirements.txt # Project dependencies
+├── README.md # Project documentation
 └── .streamlit/
-
-└── secrets.toml
-
-
-
+└── secrets.toml # API key configuration (ignored in Git)
 
 
 ---
 
+## Installation & Setup
 
-
-\## ⚙️ Installation \& Setup
-
-
-
-\### 1️⃣ Clone the Repository
-
+### 1. Clone the Repository
 ```bash
-
-git clone https://github.com/yourusername/talentscout-chatbot.git
-
-cd Talentscout-chatbot
-
-
-
-2️⃣ Create \& Activate Virtual Environment
-
+git clone https://github.com/<your-username>/talentscout-chatbot.git
+cd talentscout-chatbot
+2. Create & Activate Virtual Environment
 python -m venv venv
-
-
-
-
-
 Windows (PowerShell):
 
-
-
-.\\venv\\Scripts\\Activate.ps1
-
-
-
-3️⃣ Install Dependencies
-
+.\venv\Scripts\Activate.ps1
+3. Install Dependencies
 pip install -r requirements.txt
-
-
-
-4️⃣ Configure OpenAI API Key
-
-
-
-Create the following file:
-
-
+4. Configure OpenAI API Key
+Create the file:
 
 .streamlit/secrets.toml
-
-
-
-
-
 Add:
 
-
-
-OPENAI\_API\_KEY = "your\_openai\_api\_key\_here"
-
-
-
-5️⃣ Run the Application
-
+OPENAI_API_KEY = "your_openai_api_key_here"
+5. Run the Application
 python -m streamlit run app.py
-
-
-
-
-
-The application will open in your browser at:
-
-
+The app will open at:
 
 http://localhost:8501
-
-
-
-🧠 Prompt Design Strategy
-
+Prompt Engineering Approach
 System Prompt
+Defines the chatbot’s role, tone, and boundaries:
 
-
-
-The system prompt defines:
-
-
-
-The chatbot’s role as a hiring assistant
-
-
+Acts strictly as a hiring assistant
 
 Professional and neutral tone
 
-
-
-Strict limitation to recruitment-related tasks
-
-
+Restricted to recruitment and screening tasks
 
 Dynamic Prompt
-
-
-
-Injects the candidate’s declared tech stack
-
-
+Injects the candidate’s tech stack
 
 Generates relevant technical interview questions
 
+Ensures clarity and appropriate difficulty
 
+This approach keeps LLM output controlled and relevant.
 
-Ensures clarity, relevance, and consistency
-
-
-
-This controlled prompt design minimizes hallucinations and keeps the chatbot aligned with its purpose.
-
-
-
-🧩 Architecture \& Design Decisions
-
-Hybrid Logic Approach
-
-
-
-Rule-based logic for candidate information collection
-
-
+Design Decisions
+Hybrid Architecture
+Rule-based flow for collecting candidate information
 
 LLM usage only for technical question generation
 
+This improves:
 
+Reliability
 
-This approach ensures:
+Predictability
 
+Data privacy
 
+Efficient use of AI resources
 
-Predictability and reliability
-
-
-
-Reduced AI misuse
-
-
-
-Better privacy and control
-
-
-
-Efficient use of LLM resources
-
-
-
-🔐 Data Privacy \& Compliance
-
-
-
-No candidate data is stored permanently
-
-
-
-No external databases or logging systems are used
-
-
-
-All data exists only in Streamlit session memory
-
-
-
-Fully compliant with GDPR best practices
-
-
-
-⚠️ Challenges \& Solutions
-
+Challenges Faced & Solutions
 Challenge: Maintaining conversation context
-
-
-
-Solution: Used Streamlit session\_state to track steps, messages, and candidate data.
-
-
+Solution: Used Streamlit session state to track steps and messages.
 
 Challenge: Clearing user input safely
+Solution: Implemented on_change callback to follow Streamlit widget lifecycle rules.
 
+Challenge: Preventing unnecessary LLM calls
+Solution: Limited AI usage to only question generation.
 
-
-Solution: Used Streamlit’s on\_change callback to reset input without violating widget lifecycle rules.
-
-
-
-Challenge: Avoiding unnecessary LLM usage
-
-
-
-Solution: Adopted a hybrid rule-based + AI architecture.
-
-
-
-🚀 Future Enhancements
-
-
-
-Sentiment analysis to gauge candidate confidence
-
-
+Future Improvements
+Sentiment analysis to assess candidate confidence
 
 Multilingual support
 
-
-
 Resume upload and parsing
-
-
 
 Cloud deployment (AWS / Streamlit Cloud)
 
+Recruiter dashboard for reviewing candidate responses
 
-
-Recruiter dashboard
-
-
-
-🎥 Demo
-
-
-
-A short demo video (via Loom) can demonstrate:
-
-
+Demo
+A short demo video (Loom) demonstrates:
 
 Chatbot greeting
 
-
-
 Candidate information collection
 
-
-
-Tech stack declaration
-
-
+Tech stack input
 
 Technical question generation
 
+Graceful exit
 
+Conclusion
+TalentScout demonstrates a practical and responsible use of Large Language Models in recruitment.
+By combining structured logic with AI-driven question generation, the chatbot provides a scalable, efficient, and recruiter-friendly screening solution.
 
-Graceful conversation exit
-
-
-
-🏁 Conclusion
-
-
-
-TalentScout demonstrates how Large Language Models can be effectively integrated into recruitment workflows while maintaining control, privacy, and relevance.
-
-The project balances structured logic with AI capabilities, making it scalable and recruiter-friendly.
-
-
-
-👤 Author
-
-
-
+Author
 Zaid Khan
-
 AI/ML Intern Applicant
-
