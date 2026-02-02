@@ -79,7 +79,6 @@ talentscout-chatbot/
 
 
 ---
-
 ## Installation & Setup
 
 ### 1. Clone the Repository
@@ -107,16 +106,18 @@ The app will open at:
 http://localhost:8501
 Prompt Engineering Approach
 System Prompt
-Defines the chatbot’s role, tone, and boundaries:
+The system prompt defines the chatbot’s role, tone, and boundaries:
 
 Acts strictly as a hiring assistant
 
-Professional and neutral tone
+Maintains a professional and neutral tone
 
-Restricted to recruitment and screening tasks
+Restricted to recruitment and screening tasks only
 
 Dynamic Prompt
-Injects the candidate’s tech stack
+The dynamic prompt:
+
+Injects the candidate’s declared tech stack
 
 Generates relevant technical interview questions
 
